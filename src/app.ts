@@ -19,7 +19,7 @@ app.get('/', (req: Request, res: Response) => {
 app.use('/api/v1/auth', authRoutes)
 
 //User Route
-app.use('/api/v1', userRouter)
+app.use('/api/v1/users', userRouter)
 
 
 export default app;
