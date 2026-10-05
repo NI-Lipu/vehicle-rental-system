@@ -48,8 +48,20 @@ const UpdateUsers = async (payload: Record<string, unknown>, id: string, user: a
 
 }
 
+//Delete users
+const deleteUsers = async (id:string, user:any)=>{
+    
+ const result = await pool.query(`DELETE FROM users WHERE id=$1`,[id])
+ if(result.rowCount !==1){
+    throw new Error("User not exist")
+ }
+ return result;
+
+}
+
 export const userService = {
     getAllUsers,
     UpdateUsers,
+    deleteUsers
 
 }

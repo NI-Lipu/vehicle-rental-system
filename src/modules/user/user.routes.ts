@@ -10,4 +10,7 @@ router.get('/', auth('admin'), userController.getAllUsers);
 //Update users
 router.put('/:userId', auth('admin', 'customer'), userController.updateUsers)
 
+//Delete users
+router.delete('/:userId', auth('admin'), userController.deleteUsers)
+
 export const userRouter = router;
